@@ -18,6 +18,7 @@
 - Added basic validations for Claim model (presence of claim_type, status, phone_id)
 - Added default status initialization for new claims
 - Added phone show view and enhance navigation links in claims and phones
+- Added RSpec testing framework and initial model tests for Claim and Phone
 
 ### Changed
 
