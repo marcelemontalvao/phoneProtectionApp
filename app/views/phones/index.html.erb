@@ -1,0 +1,11 @@
+<h1>Celulares</h1>
+
+<%= link_to "Novo Celular", new_phone_path %>
+
+<ul>
+  <% @phones.each do |phone| %>
+    <li>
+      <%= phone.brand %> - <%= phone.model %> - R$ <%= phone.price %>
+    </li>
+  <% end %>
+</ul>

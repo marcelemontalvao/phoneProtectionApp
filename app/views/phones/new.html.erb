@@ -1,0 +1,22 @@
+<h1>Novo Celular</h1>
+
+<%= form_with model: @phone do |f| %>
+  <div>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+  </div>
+
+  <div>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
+
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+
+  <div>
+    <%= f.submit "Salvar" %>
+  </div>
+<% end %>
