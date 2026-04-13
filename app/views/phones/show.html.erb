@@ -1,0 +1,22 @@
+<h1>Detalhes do Celular</h1>
+
+<p><strong>Marca:</strong> <%= @phone.brand %></p>
+<p><strong>Modelo:</strong> <%= @phone.model_name %></p>
+<p><strong>Preço:</strong> R$ <%= @phone.price %></p>
+
+<%= link_to "Voltar para Celulares", phones_path %>
+<%= link_to "Novo Sinistro", new_claim_path %>
+
+<h2>Sinistros deste celular</h2>
+
+<% if @phone.claims.any? %>
+  <ul>
+    <% @phone.claims.each do |claim| %>
+      <li>
+        <%= claim.claim_type %> | <%= claim.status %> | <%= claim.description %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Este celular ainda não possui sinistros.</p>
+<% end %>

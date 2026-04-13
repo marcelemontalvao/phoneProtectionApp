@@ -23,3 +23,7 @@ class PhonesController < ApplicationController
     def phone_params
         params.require(:phone).permit(:brand, :model, :price)
     end
+
+    def show
+        @phone = Phone.find(params[:id])
+    end

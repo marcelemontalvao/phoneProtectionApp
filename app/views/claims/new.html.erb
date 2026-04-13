@@ -1,4 +1,5 @@
 <h1>Novo Sinistro</h1>
+<%= link_to "Voltar para Sinistros", claims_path %>
 
 <% if @claim && @claim.errors.any? %>
   <ul>
@@ -26,7 +27,7 @@
 
     <div>
         <%= f.label :phone_id %>
-        <%= f.number_field :phone_id %>
+        <%= f.collection_select :phone_id, Phone.all, :id, :model %>
     </div>
 
     <div>
