@@ -14,6 +14,8 @@
 - Created ClaimsController with basic CRUD (index, new, create)
 - Implemented basic views for Phones (form and index)
 - Implemented basic views for Claims (form and index)
+- Added basic validations for Phone model (presence of brand, model, price)
+- Added basic validations for Claim model (presence of claim_type, status, phone_id)
 
 ### Changed
 

@@ -1,5 +1,13 @@
 <h1>Novo Celular</h1>
 
+<% if @phone.errors.any? %>
+  <ul>
+    <% @phone.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @phone do |f| %>
   <div>
     <%= f.label :brand %>

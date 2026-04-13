@@ -1,5 +1,13 @@
 <h1>Novo Sinistro</h1>
 
+<% if @claim && @claim.errors.any? %>
+  <ul>
+    <% @claim.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @claim do |f| %>
     <div>
         <%= f.label :claim_type %>
