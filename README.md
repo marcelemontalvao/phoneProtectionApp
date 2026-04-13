@@ -10,8 +10,7 @@ O objetivo é permitir que usuários:
 * Registrem sinistros (problemas com o aparelho)
 * Visualizem os dados cadastrados
 
-O foco foi construir uma aplicação simples, funcional e com código limpo, priorizando clareza e entendimento do fluxo completo.
-
+O foco foi construir uma aplicação simples, funcional e com código limpo, simulando um fluxo real de negócio.
 ---
 
 ## Tecnologias utilizadas
@@ -78,7 +77,7 @@ Representa um problema ocorrido com o celular.
 Fluxo técnico:
 
 ```
-Formulário → Controller → Model → Banco de Dados → View
+    Formulário → Controller → Model → Banco de Dados → View
 ```
 
 ---
@@ -98,45 +97,59 @@ Formulário → Controller → Model → Banco de Dados → View
 ### 1. Clonar o repositório
 
 ```bash
-git clone <url-do-repositorio>
-cd pitzi_app
+    git clone <url-do-repositorio>
+    cd pitzi_app
 ```
 
 ### 2. Instalar dependências
 
 ```bash
-bundle install
+    bundle install
 ```
 
 ### 3. Criar e migrar banco de dados
 
 ```bash
-rails db:create
-rails db:migrate
+    rails db:create
+    rails db:migrate
 ```
 
 ### 4. Iniciar o servidor
 
 ```bash
-rails server
+    rails server
 ```
 
 ### 5. Acessar no navegador
 
 ```
-http://localhost:3000/phones
-http://localhost:3000/claims
+    http://localhost:3000/phones
+    http://localhost:3000/claims
+```
+
+---
+
+## Testes
+
+Foram implementados testes básicos com RSpec para validar:
+
+* Criação de registros válidos
+* Falha em validações obrigatórias
+
+Para rodar os testes:
+
+```bash
+    bundle exec rspec
 ```
 
 ---
 
 ##  Melhorias futuras
 
-* Adicionar validações nos modelos
 * Implementar edição e exclusão (Update/Delete)
 * Melhorar interface do usuário
 * Adicionar autenticação de usuários
-* Implementar testes automatizados com RSpec
+* Melhorar cobertura de testes automatizados
 
 ---
 
@@ -144,7 +157,7 @@ http://localhost:3000/claims
 
 * Foi utilizado SQLite para simplificar o setup e acelerar o desenvolvimento
 * O projeto foi desenvolvido como MVP, priorizando funcionalidades essenciais
-* A estrutura segue o padrão Rails para manter clareza e organização
+* Definição de status padrão ("aberto") para novos sinistros, garantindo consistência dos dados
 
 ---
 
