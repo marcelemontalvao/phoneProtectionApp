@@ -1,4 +1,10 @@
 class ClaimsController < ApplicationController
+    =begin
+        Cria um novo sinistro associado a um celular.
+
+        Simula o momento em que o cliente registra um problema com o aparelho no sistema.
+    =end
+
     def index
         @claims = Claim.all
     end
