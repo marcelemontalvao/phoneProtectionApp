@@ -1,4 +1,4 @@
-# PitzizApp - Sistema de Proteção de Celular (MVP)
+# PhoneProtectionApp 
 
 ## Sobre o projeto
 
