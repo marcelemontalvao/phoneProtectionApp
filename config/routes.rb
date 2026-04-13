@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :phones
-  
+  resources :claims
 end

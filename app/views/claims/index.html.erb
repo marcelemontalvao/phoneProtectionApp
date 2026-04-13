@@ -1,0 +1,11 @@
+<h1>Sinistros</h1>
+
+<%= link_to "Novo Sinistro", new_claim_path %>
+
+<ul>
+  <% @claims.each do |claim| %>
+    <li>
+      <%= claim.claim_type %> - <%= claim.description %> - <%= claim.status %>
+    </li>
+  <% end %>
+</ul>

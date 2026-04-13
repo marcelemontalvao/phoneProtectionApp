@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_13_055816) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_13_062345) do
+  create_table "claims", force: :cascade do |t|
+    t.string "claim_type"
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.integer "phone_id", null: false
+    t.string "status"
+    t.datetime "updated_at", null: false
+    t.index ["phone_id"], name: "index_claims_on_phone_id"
+  end
+
   create_table "phones", force: :cascade do |t|
     t.string "brand"
     t.datetime "created_at", null: false
@@ -18,4 +28,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_13_055816) do
     t.integer "price"
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "claims", "phones"
 end
