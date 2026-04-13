@@ -16,6 +16,7 @@
 - Implemented basic views for Claims (form and index)
 - Added basic validations for Phone model (presence of brand, model, price)
 - Added basic validations for Claim model (presence of claim_type, status, phone_id)
+- Added default status initialization for new claims
 
 ### Changed
 
