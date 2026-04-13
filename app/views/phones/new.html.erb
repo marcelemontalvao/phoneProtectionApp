@@ -1,12 +1,17 @@
 <h1>Novo Celular</h1>
-<%= link_to "Voltar para Celulares", phones_path %>
+
+<p><%= link_to "Voltar para Celulares", phones_path %></p>
+
 
 <% if @phone.errors.any? %>
-  <ul>
-    <% @phone.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+  <div class="errors">
+    <h2><%= pluralize(@phone.errors.count, "erro") %> proibiu este celular de ser salvo:</h2>
+    <ul>
+      <% @phone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <%= form_with model: @phone do |f| %>

@@ -2,11 +2,14 @@
 <%= link_to "Voltar para Sinistros", claims_path %>
 
 <% if @claim && @claim.errors.any? %>
-  <ul>
-    <% @claim.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+    <div class="errors">
+        <h2><%= pluralize(@claim.errors.count, "erro") %> proibiu este sinistro de ser salvo:</h2>
+        <ul>
+            <% @claim.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
 <% end %>
 
 <%= form_with model: @claim do |f| %>
@@ -27,7 +30,7 @@
 
     <div>
         <%= f.label :phone_id %>
-        <%= f.collection_select :phone_id, Phone.all, :id, :model %>
+        <%= f.collection_select :phone_id, Phone.all, :id, :display_name %>
     </div>
 
     <div>

@@ -1,12 +1,13 @@
 <h1>Sinistros</h1>
 
 <%= link_to "Novo Sinistro", new_claim_path %>
+<br>
 <%= link_to "Ver Celulares", phones_path %>
 
 
-<ul>
+<ul class="card-list">
   <% @claims.each do |claim| %>
-    <li>
+    <li class="muted">
       <%= claim.claim_type %> - <%= claim.description %> - <%= claim.status %>
     </li>
   <% end %>

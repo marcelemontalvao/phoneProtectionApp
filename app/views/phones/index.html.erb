@@ -1,12 +1,13 @@
 <h1>Celulares</h1>
 
 <%= link_to "Novo Celular", new_phone_path %>
+<br>
 <%= link_to "Ver Sinistros", claims_path %>
 
 
-<ul>
+<ul class="card-list">
   <% @phones.each do |phone| %>
-    <li>
+    <li class="muted">
       <%= phone.brand %> - <%= phone.model %> - R$ <%= phone.price %>
     </li>
   <% end %>

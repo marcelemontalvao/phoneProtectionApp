@@ -4,4 +4,8 @@ class Phone < ApplicationRecord
     validates :brand, presence: true
     validates :model, presence: true
     validates :price, presence: true
+
+    def display_name
+        "#{id} - #{brand} - #{model}"
+    end
 end
