@@ -10,17 +10,23 @@ O objetivo é permitir que usuários:
 * Registrem sinistros (problemas com o aparelho)
 * Visualizem os dados cadastrados
 
-O foco foi construir uma aplicação simples, funcional e com código limpo, simulando um fluxo real de negócio.
 ---
 
 ## Tecnologias utilizadas
 
 * Ruby
 * Ruby on Rails
-* SQLite (banco de dados)
-* HTML + ERB
-
+* PostgreSQL
+* RSpec
+* Render (deploy)
 ---
+
+## Deploy
+
+A aplicação foi publicada no Render e pode ser acessada em:
+
+[https://phoneprotectionapp.onrender.com](https://phoneprotectionapp.onrender.com)
+
 
 ##  Conceitos aplicados
 
@@ -29,6 +35,8 @@ O foco foi construir uma aplicação simples, funcional e com código limpo, sim
 * Relacionamento entre entidades (`has_many` / `belongs_to`)
 * Strong Parameters
 * Migrations e Active Record
+* Validações de modelo 
+* Testes automatizados com RSpec
 
 ---
 
@@ -89,6 +97,9 @@ Fluxo técnico:
 * Cadastro de sinistros
 * Listagem de sinistros
 * Associação entre celular e sinistro
+* Validações de dados
+* Status padrão para sinistros ("aberto")
+* Testes automatizados para models
 
 ---
 
@@ -97,7 +108,7 @@ Fluxo técnico:
 ### 1. Clonar o repositório
 
 ```bash
-    git clone <url-do-repositorio>
+    git clone https://github.com/marcelemontalvao/phoneProtectionApp
     cd pitzi_app
 ```
 
@@ -107,20 +118,24 @@ Fluxo técnico:
     bundle install
 ```
 
-### 3. Criar e migrar banco de dados
+### 3. Configurar banco de dados
+
+O projeto utiliza PostgreSQL. Certifique-se de que o PostgreSQL esteja instalado e em execução.
+
+### 4. Criar e migrar banco de dados
 
 ```bash
     rails db:create
     rails db:migrate
 ```
 
-### 4. Iniciar o servidor
+### 5. Iniciar o servidor
 
 ```bash
     rails server
 ```
 
-### 5. Acessar no navegador
+### 6. Acessar no navegador
 
 ```
     http://localhost:3000/phones
@@ -155,7 +170,7 @@ Para rodar os testes:
 
 ##  Decisões técnicas
 
-* Foi utilizado SQLite para simplificar o setup e acelerar o desenvolvimento
+* Durante o desenvolvimento inicial, o projeto utilizou SQLite para acelerar o setup local. Posteriormente, foi migrado para PostgreSQL para viabilizar o deploy em produção no Render.
 * O projeto foi desenvolvido como MVP, priorizando funcionalidades essenciais
 * Definição de status padrão ("aberto") para novos sinistros, garantindo consistência dos dados
 
@@ -166,8 +181,7 @@ Para rodar os testes:
 Este projeto foi desenvolvido com foco em:
 
 * Aprendizado prático de Ruby on Rails
-* Construção de um sistema realista em curto prazo
-* Demonstração de conhecimento em backend e arquitetura
+* Demonstração de conhecimento em backend
 
 ---
 
